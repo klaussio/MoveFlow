@@ -8,7 +8,7 @@ class Database
 
     private const HOST = 'localhost';
     private const PORT = 3306;
-    private const DBNAME = 'moveflow';
+    private const DBNAME = 'move_flow';
     private const USERNAME = 'root';
     private const PASSWORD = '';
     private const CHARSET = 'utf8mb4';
@@ -46,5 +46,7 @@ class Database
     /**
      * Prevent cloning
      */
-    private function __clone() {}
+    private function __clone()
+    {
+    }
 }
