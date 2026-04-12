@@ -1,0 +1,45 @@
+/* ============================================
+   MoveFlow — Responsive Styles
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .ride-detail-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: var(--sidebar-width);
+    }
+    .sidebar.mobile-open { transform: translateX(0); }
+    .main { margin-left: 0; }
+    .app.sidebar-collapsed .main { margin-left: 0; }
+    .topbar-toggle { display: flex; }
+    .content { padding: var(--space-4); }
+    .stat-grid { grid-template-columns: 1fr; }
+    .page-header { flex-direction: column; align-items: flex-start; }
+    .page-header-actions { width: 100%; }
+    .page-header-actions .btn { flex: 1; }
+    .form-row { grid-template-columns: 1fr; }
+    .table-header { flex-direction: column; align-items: flex-start; }
+    .table-filters { width: 100%; flex-direction: column; }
+    .table-filters .form-control { width: 100%; }
+    .table-footer { flex-direction: column; align-items: flex-start; }
+    .ride-info-grid { grid-template-columns: 1fr; }
+    .toast-container { left: var(--space-4); right: var(--space-4); max-width: none; }
+    .modal { width: 95%; }
+    .login-card { padding: var(--space-6); }
+
+    .sidebar-overlay.active { display: block; }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .topbar-breadcrumb { display: none; }
+    .topbar { padding: 0 var(--space-4); }
+    .login-brand-text { font-size: var(--text-2xl); }
+}
