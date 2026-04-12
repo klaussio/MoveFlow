@@ -1,0 +1,157 @@
+/* ============================================
+   MoveFlow — Page-Specific Styles
+   ============================================ */
+
+/* === Login Page === */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-950);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+    animation: loginBgPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes loginBgPulse {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-20px, -10px) scale(1.05); }
+}
+
+.login-container {
+    position: relative; z-index: 1; width: 100%; max-width: 420px; padding: 0 var(--space-4);
+}
+
+.login-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.login-brand {
+    display: flex; align-items: center; justify-content: center; gap: var(--space-3);
+    margin-bottom: var(--space-8);
+}
+
+.login-brand-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+    border-radius: var(--radius-lg);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.login-brand-icon svg { width: 26px; height: 26px; color: white; }
+
+.login-brand-text {
+    font-family: var(--font-heading); font-size: var(--text-3xl);
+    font-weight: var(--font-bold); color: white;
+}
+
+.login-brand-text span { color: var(--primary-400); }
+
+.login-title {
+    text-align: center; margin-bottom: var(--space-6);
+}
+
+.login-title h2 { font-size: var(--text-xl); color: white; margin-bottom: var(--space-2); }
+.login-title p { color: var(--gray-400); font-size: var(--text-sm); margin-bottom: 0; }
+
+.login-form .form-label { color: var(--gray-300); }
+.login-form .form-control {
+    background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.login-form .form-control:focus {
+    border-color: var(--primary-500); box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+.login-form .form-control::placeholder { color: var(--gray-500); }
+.login-form .btn-primary { width: 100%; padding: 0.75rem; font-size: var(--text-md); }
+
+.login-alert {
+    padding: var(--space-3) var(--space-4); border-radius: var(--radius-md);
+    font-size: var(--text-sm); margin-bottom: var(--space-5);
+    display: flex; align-items: center; gap: var(--space-2);
+}
+.login-alert.error { background: rgba(239, 68, 68, 0.15); color: var(--danger-400); border: 1px solid rgba(239, 68, 68, 0.2); }
+.login-alert.success { background: rgba(34, 197, 94, 0.15); color: var(--success-400); border: 1px solid rgba(34, 197, 94, 0.2); }
+
+.login-footer { text-align: center; margin-top: var(--space-6); }
+.login-footer p { font-size: var(--text-sm); color: var(--gray-500); margin-bottom: 0; }
+.login-footer a { color: var(--primary-400); }
+
+/* === Dashboard Page === */
+.dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-5); margin-top: var(--space-5); }
+.chart-container { position: relative; height: 280px; }
+.chart-canvas { width: 100% !important; height: 100% !important; }
+
+/* === Ride Detail Page === */
+.ride-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.ride-timeline { position: relative; padding-left: var(--space-8); }
+.timeline-item { position: relative; padding-bottom: var(--space-6); }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+    content: ''; position: absolute; left: calc(var(--space-8) * -1 + 10px);
+    top: 24px; bottom: 0; width: 2px; background: var(--gray-200);
+}
+.timeline-item:last-child::before { display: none; }
+.timeline-dot {
+    position: absolute; left: calc(var(--space-8) * -1 + 1px);
+    top: 4px; width: 20px; height: 20px; border-radius: var(--radius-full);
+    border: 2px solid var(--gray-300); background: white;
+    display: flex; align-items: center; justify-content: center;
+}
+.timeline-dot.active { border-color: var(--primary-500); background: var(--primary-500); }
+.timeline-dot.active::after { content: ''; width: 6px; height: 6px; border-radius: var(--radius-full); background: white; }
+.timeline-dot.completed { border-color: var(--success-500); background: var(--success-500); }
+.timeline-dot.cancelled { border-color: var(--danger-500); background: var(--danger-500); }
+.timeline-label { font-size: var(--text-sm); font-weight: var(--font-semibold); color: var(--gray-900); margin-bottom: 2px; }
+.timeline-time { font-size: var(--text-xs); color: var(--gray-500); }
+
+.ride-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.ride-info-item { padding: var(--space-3); background: var(--gray-50); border-radius: var(--radius-md); }
+.ride-info-label { font-size: var(--text-xs); color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-1); }
+.ride-info-value { font-size: var(--text-sm); font-weight: var(--font-medium); color: var(--gray-900); }
+
+.ride-route { display: flex; align-items: stretch; gap: var(--space-3); margin: var(--space-4) 0; }
+.ride-route-line { width: 3px; background: linear-gradient(to bottom, var(--primary-500), var(--success-500)); border-radius: var(--radius-full); position: relative; }
+.ride-route-line::before, .ride-route-line::after {
+    content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+    width: 10px; height: 10px; border-radius: var(--radius-full); border: 2px solid white;
+}
+.ride-route-line::before { top: 0; background: var(--primary-500); }
+.ride-route-line::after { bottom: 0; background: var(--success-500); }
+.ride-route-points { flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 60px; }
+.ride-route-point { font-size: var(--text-sm); }
+.ride-route-point strong { display: block; font-size: var(--text-xs); color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+
+/* === Fare display === */
+.fare-display {
+    background: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+    border: 1px solid var(--primary-200); border-radius: var(--radius-lg); padding: var(--space-4);
+    text-align: center;
+}
+.fare-display .fare-label { font-size: var(--text-sm); color: var(--gray-600); margin-bottom: var(--space-1); }
+.fare-display .fare-value {
+    font-family: var(--font-heading); font-size: var(--text-3xl);
+    font-weight: var(--font-bold); color: var(--primary-700);
+}
+.fare-breakdown { display: flex; justify-content: center; gap: var(--space-4); margin-top: var(--space-2); }
+.fare-breakdown span { font-size: var(--text-xs); color: var(--gray-500); }
