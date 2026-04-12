@@ -24,7 +24,7 @@ $action = $editing ? APP_URL . "/drivers/update/{$driver['id']}" : APP_URL . '/d
         <form id="driver-form" method="POST" action="<?= $action ?>">
             <?= Session::csrfField() ?>
 
-            <h4 style="margin-bottom:var(--space-4);color:var(--gray-700)">Dados Pessoais</h4>
+            <h4 class="section-heading">Dados Pessoais</h4>
             <div class="form-row">
                 <div class="form-group">
                     <label class="form-label" for="name">Nome Completo <span class="required">*</span></label>
@@ -52,7 +52,7 @@ $action = $editing ? APP_URL . "/drivers/update/{$driver['id']}" : APP_URL . '/d
                 <input type="text" class="form-control" id="cnh" name="cnh" value="<?= $v('cnh') ?>" required placeholder="Número da CNH" style="max-width:400px">
             </div>
 
-            <h4 style="margin:var(--space-6) 0 var(--space-4);color:var(--gray-700)">Dados do Veículo</h4>
+            <h4 class="section-heading mt">Dados do Veículo</h4>
             <div class="form-row">
                 <div class="form-group">
                     <label class="form-label" for="vehicle_model">Modelo <span class="required">*</span></label>

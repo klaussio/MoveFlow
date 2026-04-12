@@ -63,9 +63,9 @@ $isCancelled = $s === RIDE_STATUS_CANCELLED;
                 </div>
 
                 <?php if ($isCancelled && $ride['cancel_reason']): ?>
-                    <div style="margin-top:var(--space-4);padding:var(--space-3);background:var(--danger-50);border-radius:var(--radius-md);border:1px solid var(--danger-100)">
-                        <span style="font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--danger-600)">Motivo do cancelamento:</span>
-                        <p style="margin:var(--space-1) 0 0;font-size:var(--text-sm);color:var(--danger-700)"><?= htmlspecialchars($ride['cancel_reason']) ?></p>
+                    <div class="cancel-reason-box">
+                        <span class="cancel-reason-label">Motivo do cancelamento:</span>
+                        <p class="cancel-reason-text"><?= htmlspecialchars($ride['cancel_reason']) ?></p>
                     </div>
                 <?php endif; ?>
 
@@ -191,9 +191,9 @@ $isCancelled = $s === RIDE_STATUS_CANCELLED;
         <div class="card mb-4">
             <div class="card-header"><h3>Passageiro</h3></div>
             <div class="card-body">
-                <div style="font-weight:var(--font-medium);color:var(--gray-900);margin-bottom:var(--space-1)"><?= htmlspecialchars($ride['passenger_name'] ?? '—') ?></div>
-                <div style="font-size:var(--text-sm);color:var(--gray-500)"><?= htmlspecialchars($ride['passenger_phone'] ?? '') ?></div>
-                <div style="font-size:var(--text-sm);color:var(--gray-500)"><?= htmlspecialchars($ride['passenger_email'] ?? '') ?></div>
+                <div class="person-name"><?= htmlspecialchars($ride['passenger_name'] ?? '—') ?></div>
+                <div class="person-detail"><?= htmlspecialchars($ride['passenger_phone'] ?? '') ?></div>
+                <div class="person-detail"><?= htmlspecialchars($ride['passenger_email'] ?? '') ?></div>
             </div>
         </div>
 
@@ -202,9 +202,9 @@ $isCancelled = $s === RIDE_STATUS_CANCELLED;
         <div class="card">
             <div class="card-header"><h3>Motorista</h3></div>
             <div class="card-body">
-                <div style="font-weight:var(--font-medium);color:var(--gray-900);margin-bottom:var(--space-1)"><?= htmlspecialchars($ride['driver_name']) ?></div>
-                <div style="font-size:var(--text-sm);color:var(--gray-500)"><?= htmlspecialchars($ride['driver_phone'] ?? '') ?></div>
-                <div style="font-size:var(--text-sm);color:var(--gray-500);margin-top:var(--space-2)"><?= htmlspecialchars($ride['vehicle_model'] ?? '') ?> · <?= htmlspecialchars($ride['vehicle_plate'] ?? '') ?> · <?= htmlspecialchars($ride['vehicle_color'] ?? '') ?></div>
+                <div class="person-name"><?= htmlspecialchars($ride['driver_name']) ?></div>
+                <div class="person-detail"><?= htmlspecialchars($ride['driver_phone'] ?? '') ?></div>
+                <div class="person-detail" style="margin-top:var(--space-2)"><?= htmlspecialchars($ride['vehicle_model'] ?? '') ?> · <?= htmlspecialchars($ride['vehicle_plate'] ?? '') ?> · <?= htmlspecialchars($ride['vehicle_color'] ?? '') ?></div>
                 <?php if ($ride['driver_rating']): ?>
                     <div style="margin-top:var(--space-2);color:var(--warning-500)">★ <?= number_format($ride['driver_rating'], 1) ?></div>
                 <?php endif; ?>

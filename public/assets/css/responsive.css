@@ -8,12 +8,14 @@
 @media (max-width: 1200px) {
     .dashboard-grid { grid-template-columns: 1fr; }
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .ride-form-grid { grid-template-columns: 1fr 280px; }
 }
 
 /* === Tablet Landscape (max-width: 1024px) === */
 @media (max-width: 1024px) {
     .ride-detail-grid { grid-template-columns: 1fr; }
     .ride-info-grid { grid-template-columns: repeat(2, 1fr); }
+    .ride-form-grid { grid-template-columns: 1fr; }
 
     .modal { max-width: 480px; }
 
@@ -43,8 +45,10 @@
     /* Content padding */
     .content { padding: var(--space-4); }
 
-    /* Stats single column */
-    .stat-grid { grid-template-columns: 1fr; }
+    /* Stats — 2 cols on tablet, avoid overflow */
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .stat-card {
         padding: var(--space-4);
@@ -67,6 +71,7 @@
 
     /* Forms */
     .form-row { grid-template-columns: 1fr; }
+    .ride-form-grid { grid-template-columns: 1fr; }
 
     /* Table */
     .table-header {
@@ -77,7 +82,7 @@
         width: 100%;
         flex-direction: column;
     }
-    .table-filters .form-control { width: 100%; }
+    .table-filters .form-control { width: 100% !important; }
     .table-footer {
         flex-direction: column;
         align-items: stretch;
@@ -87,7 +92,7 @@
         justify-content: center;
     }
 
-    /* Table scroll helper */
+    /* Table horizontal scroll */
     .table-wrapper {
         -webkit-overflow-scrolling: touch;
     }
@@ -162,7 +167,11 @@
         padding: var(--space-3);
     }
 
-    /* Stat cards compact */
+    /* Stat cards — single column, no overflow */
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
     .stat-card {
         padding: var(--space-3);
         gap: var(--space-3);
@@ -289,6 +298,24 @@
     select.form-control {
         padding-right: 2rem;
     }
+
+    /* Ride form grid always 1 col */
+    .ride-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ride detail grid always 1 col */
+    .ride-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Fare display compact */
+    .fare-display {
+        padding: var(--space-3);
+    }
+    .fare-display .fare-value {
+        font-size: var(--text-2xl);
+    }
 }
 
 /* === Extra Small (max-width: 360px) === */
@@ -332,9 +359,8 @@
         gap: var(--space-1);
     }
 
-    /* Fare display compact */
     .fare-display .fare-value {
-        font-size: var(--text-2xl);
+        font-size: var(--text-xl);
     }
 }
 

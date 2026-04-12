@@ -41,25 +41,36 @@
     /* Semantic Colors */
     --success-50: #f0fdf4;
     --success-100: #dcfce7;
+    --success-400: #4ade80;
     --success-500: #22c55e;
     --success-600: #16a34a;
     --success-700: #15803d;
 
     --warning-50: #fffbeb;
     --warning-100: #fef3c7;
+    --warning-400: #fbbf24;
     --warning-500: #f59e0b;
     --warning-600: #d97706;
 
     --danger-50: #fef2f2;
     --danger-100: #fee2e2;
+    --danger-400: #f87171;
     --danger-500: #ef4444;
     --danger-600: #dc2626;
     --danger-700: #b91c1c;
 
     --info-50: #eff6ff;
     --info-100: #dbeafe;
+    --info-400: #60a5fa;
     --info-500: #3b82f6;
     --info-600: #2563eb;
+
+    /* === Semantic Text Colors === */
+    --text-color: var(--gray-800);
+    --text-color-secondary: var(--gray-600);
+    --text-color-muted: var(--gray-500);
+    --text-color-heading: var(--gray-900);
+    --text-section-heading: var(--gray-700);
 
     /* === Layout Colors === */
     --sidebar-bg: #0f0f1a;
@@ -185,6 +196,13 @@
     --primary-50: rgba(124, 58, 237, 0.1);
     --primary-100: rgba(124, 58, 237, 0.15);
     --accent-50: rgba(6, 182, 212, 0.1);
+
+    /* Semantic text colors for dark */
+    --text-color: #e0e6f0;
+    --text-color-secondary: #a8b5cc;
+    --text-color-muted: #8b98b0;
+    --text-color-heading: #f0f2f7;
+    --text-section-heading: #c5cee0;
 
     /* Layout */
     --sidebar-bg: #0a0c14;

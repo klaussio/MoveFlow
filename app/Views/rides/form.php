@@ -18,7 +18,7 @@ $v = fn($field) => htmlspecialchars($old[$field] ?? '');
     </div>
 </div>
 
-<div style="display:grid;grid-template-columns:1fr 340px;gap:var(--space-5);align-items:start">
+<div class="ride-form-grid">
     <div class="card">
         <div class="card-body">
             <form id="ride-form" method="POST" action="<?= APP_URL ?>/rides/store">
@@ -44,7 +44,7 @@ $v = fn($field) => htmlspecialchars($old[$field] ?? '');
                     </select>
                 </div>
 
-                <h4 style="margin:var(--space-4) 0;color:var(--gray-700)">Rota</h4>
+                <h4 class="section-heading mt">Rota</h4>
                 <div class="form-group">
                     <label class="form-label" for="origin_address">Endereço de Origem <span class="required">*</span></label>
                     <input type="text" class="form-control" id="origin_address" name="origin_address" value="<?= $v('origin_address') ?>" required placeholder="Ex: Av. Paulista, 1000 - São Paulo">
@@ -60,7 +60,7 @@ $v = fn($field) => htmlspecialchars($old[$field] ?? '');
                 <input type="hidden" name="destination_lat" value="0">
                 <input type="hidden" name="destination_lng" value="0">
 
-                <h4 style="margin:var(--space-4) 0;color:var(--gray-700)">Estimativa</h4>
+                <h4 class="section-heading mt">Estimativa</h4>
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label" for="distance_km">Distância (km) <span class="required">*</span></label>
@@ -72,7 +72,7 @@ $v = fn($field) => htmlspecialchars($old[$field] ?? '');
                     </div>
                 </div>
 
-                <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6)">
+                <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap">
                     <button type="submit" class="btn btn-primary btn-lg">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                         Solicitar Corrida
@@ -87,11 +87,11 @@ $v = fn($field) => htmlspecialchars($old[$field] ?? '');
     <div>
         <div class="fare-display" id="fare-preview" style="display:none"></div>
         <div class="card mt-4">
-            <div class="card-body" style="font-size:var(--text-sm);color:var(--gray-500)">
-                <h4 style="font-size:var(--text-sm);margin-bottom:var(--space-3);color:var(--gray-700)">Como a tarifa é calculada:</h4>
-                <p style="margin-bottom:var(--space-2)"><strong>Base:</strong> R$ 5,00</p>
-                <p style="margin-bottom:var(--space-2)"><strong>Por km:</strong> R$ 2,50</p>
-                <p style="margin-bottom:0"><strong>Por min:</strong> R$ 0,40</p>
+            <div class="card-body">
+                <h4 class="fare-info-label">Como a tarifa é calculada:</h4>
+                <p class="fare-info-item"><strong>Base:</strong> R$ 5,00</p>
+                <p class="fare-info-item"><strong>Por km:</strong> R$ 2,50</p>
+                <p class="fare-info-item"><strong>Por min:</strong> R$ 0,40</p>
             </div>
         </div>
     </div>
