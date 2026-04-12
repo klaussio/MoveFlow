@@ -2,44 +2,428 @@
    MoveFlow — Responsive Styles
    ============================================ */
 
-/* Tablet */
-@media (max-width: 1024px) {
+/* === Large Desktop (1280+) — default, no changes needed === */
+
+/* === Desktop (max-width: 1200px) === */
+@media (max-width: 1200px) {
     .dashboard-grid { grid-template-columns: 1fr; }
-    .ride-detail-grid { grid-template-columns: 1fr; }
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mobile */
+/* === Tablet Landscape (max-width: 1024px) === */
+@media (max-width: 1024px) {
+    .ride-detail-grid { grid-template-columns: 1fr; }
+    .ride-info-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .modal { max-width: 480px; }
+
+    .page-header-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* === Tablet Portrait (max-width: 768px) === */
 @media (max-width: 768px) {
+    /* Sidebar goes off-screen */
     .sidebar {
         transform: translateX(-100%);
         width: var(--sidebar-width);
     }
-    .sidebar.mobile-open { transform: translateX(0); }
+    .sidebar.mobile-open {
+        transform: translateX(0);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3);
+    }
+
     .main { margin-left: 0; }
     .app.sidebar-collapsed .main { margin-left: 0; }
+
+    /* Show mobile toggle */
     .topbar-toggle { display: flex; }
+
+    /* Content padding */
     .content { padding: var(--space-4); }
+
+    /* Stats single column */
     .stat-grid { grid-template-columns: 1fr; }
-    .page-header { flex-direction: column; align-items: flex-start; }
-    .page-header-actions { width: 100%; }
-    .page-header-actions .btn { flex: 1; }
+
+    .stat-card {
+        padding: var(--space-4);
+    }
+
+    /* Page header stacks */
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .page-header-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .page-header-actions .btn {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+
+    /* Forms */
     .form-row { grid-template-columns: 1fr; }
-    .table-header { flex-direction: column; align-items: flex-start; }
-    .table-filters { width: 100%; flex-direction: column; }
+
+    /* Table */
+    .table-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .table-filters {
+        width: 100%;
+        flex-direction: column;
+    }
     .table-filters .form-control { width: 100%; }
-    .table-footer { flex-direction: column; align-items: flex-start; }
+    .table-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+    .table-footer .pagination {
+        justify-content: center;
+    }
+
+    /* Table scroll helper */
+    .table-wrapper {
+        -webkit-overflow-scrolling: touch;
+    }
+    .table-wrapper table {
+        min-width: 600px;
+    }
+
+    /* Ride detail */
     .ride-info-grid { grid-template-columns: 1fr; }
-    .toast-container { left: var(--space-4); right: var(--space-4); max-width: none; }
-    .modal { width: 95%; }
+
+    /* Toasts */
+    .toast-container {
+        left: var(--space-4);
+        right: var(--space-4);
+        max-width: none;
+        top: var(--space-4);
+    }
+
+    /* Modal */
+    .modal { width: 95%; max-width: none; }
+    .modal-header { padding: var(--space-4); }
+    .modal-body { padding: var(--space-4); }
+    .modal-footer { padding: var(--space-3) var(--space-4); flex-wrap: wrap; }
+    .modal-footer .btn { flex: 1; min-width: 100px; }
+
+    /* Login */
     .login-card { padding: var(--space-6); }
 
+    /* Sidebar overlay */
     .sidebar-overlay.active { display: block; }
+
+    /* Dashboard chart */
+    .chart-container {
+        height: 220px;
+    }
+
+    /* Topbar */
+    .topbar {
+        padding: 0 var(--space-4);
+    }
+
+    /* Fare display */
+    .fare-breakdown {
+        flex-direction: column;
+        gap: var(--space-1);
+        align-items: center;
+    }
 }
 
-/* Small Mobile */
+/* === Small Mobile (max-width: 480px) === */
 @media (max-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+
+    /* Topbar slim */
+    .topbar {
+        height: 56px;
+        padding: 0 var(--space-3);
+    }
     .topbar-breadcrumb { display: none; }
-    .topbar { padding: 0 var(--space-4); }
+    .topbar-title { font-size: var(--text-base); }
+    .topbar-right {
+        gap: var(--space-1);
+    }
+    .topbar-right > span {
+        display: none;
+    }
+
+    /* Content minimal padding */
+    .content {
+        padding: var(--space-3);
+    }
+
+    /* Stat cards compact */
+    .stat-card {
+        padding: var(--space-3);
+        gap: var(--space-3);
+    }
+    .stat-card-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .stat-card-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    .stat-card-value {
+        font-size: var(--text-xl);
+    }
+
+    /* Page header compact */
+    .page-header-info h1 {
+        font-size: var(--text-xl);
+    }
+    .page-header-info p {
+        font-size: var(--text-xs);
+    }
+    .page-header-actions {
+        flex-direction: column;
+    }
+    .page-header-actions .btn {
+        width: 100%;
+    }
+
+    /* Buttons adaptive */
+    .btn {
+        padding: 0.5rem 0.875rem;
+        font-size: var(--text-xs);
+    }
+    .btn-lg {
+        padding: 0.625rem 1.125rem;
+        font-size: var(--text-sm);
+    }
+
+    /* Card compact */
+    .card-body { padding: var(--space-4); }
+    .card-header { padding: var(--space-4) var(--space-4) 0; }
+    .card-header h3 { font-size: var(--text-sm); }
+    .card-footer { padding: var(--space-3) var(--space-4); }
+
+    /* Table compact cells */
+    thead th { padding: var(--space-2) var(--space-3); font-size: 0.6875rem; }
+    tbody td { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); }
+    .table-header { padding: var(--space-3); }
+    .table-header h3 { font-size: var(--text-sm); }
+
+    /* Modal full-width */
+    .modal {
+        width: calc(100% - var(--space-4));
+        max-height: calc(100vh - var(--space-8));
+        border-radius: var(--radius-lg);
+    }
+    .modal-header h3 { font-size: var(--text-base); }
+
+    /* Pagination compact */
+    .pagination a, .pagination span {
+        min-width: 28px;
+        height: 28px;
+        font-size: var(--text-xs);
+    }
+
+    /* Badge compact */
+    .badge {
+        padding: 2px 7px;
+        font-size: 0.625rem;
+    }
+
+    /* Login responsive */
+    .login-container {
+        padding: 0 var(--space-3);
+    }
+    .login-card {
+        padding: var(--space-5);
+        border-radius: var(--radius-xl);
+    }
     .login-brand-text { font-size: var(--text-2xl); }
+    .login-brand-icon { width: 40px; height: 40px; }
+    .login-brand-icon svg { width: 22px; height: 22px; }
+    .login-title h2 { font-size: var(--text-lg); }
+
+    .login-form .form-control {
+        height: 44px;
+        font-size: var(--text-sm);
+    }
+
+    .login-form .btn-login {
+        height: 44px;
+        font-size: var(--text-sm);
+    }
+
+    /* Toast full-width */
+    .toast-container {
+        left: var(--space-3);
+        right: var(--space-3);
+    }
+    .toast {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    /* Dashboard chart */
+    .chart-container {
+        height: 180px;
+    }
+
+    /* Ride route compact */
+    .ride-route-points {
+        min-height: 50px;
+    }
+
+    /* Form groups compact */
+    .form-group {
+        margin-bottom: var(--space-4);
+    }
+    .form-control {
+        padding: 0.4375rem 0.75rem;
+        font-size: var(--text-sm);
+    }
+    select.form-control {
+        padding-right: 2rem;
+    }
+}
+
+/* === Extra Small (max-width: 360px) === */
+@media (max-width: 360px) {
+    html {
+        font-size: 14px;
+    }
+
+    .content {
+        padding: var(--space-2);
+    }
+
+    .topbar {
+        padding: 0 var(--space-2);
+    }
+
+    .login-container {
+        padding: 0 var(--space-2);
+    }
+
+    .login-card {
+        padding: var(--space-4);
+    }
+
+    .login-brand-text { font-size: var(--text-xl); }
+
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .stat-card-icon {
+        align-self: center;
+    }
+
+    .page-header-info h1 {
+        font-size: var(--text-lg);
+    }
+
+    .table-actions {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    /* Fare display compact */
+    .fare-display .fare-value {
+        font-size: var(--text-2xl);
+    }
+}
+
+/* === Touch/Hover Optimization === */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .nav-link {
+        padding: var(--space-3) var(--space-4);
+        min-height: 44px;
+    }
+
+    .btn {
+        min-height: 44px;
+    }
+    .btn-sm {
+        min-height: 36px;
+    }
+
+    .topbar-btn,
+    .topbar-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .pagination a, .pagination span {
+        min-width: 36px;
+        height: 36px;
+    }
+
+    .modal-close {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Remove hover effects on touch */
+    .stat-card:hover {
+        transform: none;
+    }
+
+    .card:hover {
+        box-shadow: var(--shadow-card);
+    }
+}
+
+/* === Landscape Mobile === */
+@media (max-height: 500px) and (orientation: landscape) {
+    .login-page {
+        align-items: flex-start;
+        padding-top: var(--space-4);
+    }
+    .login-card {
+        padding: var(--space-4);
+    }
+    .login-brand {
+        margin-bottom: var(--space-4);
+    }
+    .login-title {
+        margin-bottom: var(--space-3);
+    }
+    .login-form .form-group {
+        margin-bottom: var(--space-3);
+    }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* === Print === */
+@media print {
+    .sidebar,
+    .topbar,
+    .sidebar-overlay,
+    .toast-container {
+        display: none !important;
+    }
+    .main {
+        margin-left: 0 !important;
+    }
+    .content {
+        padding: 0 !important;
+    }
+    body {
+        background: white;
+        color: black;
+    }
 }

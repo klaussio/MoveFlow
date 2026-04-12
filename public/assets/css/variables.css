@@ -74,10 +74,13 @@
     --topbar-bg: rgba(255, 255, 255, 0.8);
     --topbar-height: 64px;
     --topbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --topbar-border: var(--gray-200);
+    --topbar-text: var(--gray-900);
 
     --body-bg: #f0f2f7;
     --card-bg: #ffffff;
     --card-hover: #fafbff;
+    --card-border: var(--gray-200);
 
     /* === Typography === */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -147,4 +150,63 @@
     --z-modal: 400;
     --z-toast: 500;
     --z-tooltip: 600;
+
+    /* === Input Token (Login) === */
+    --input-height: 48px;
+    --input-icon-size: 20px;
+}
+
+/* ============================================
+   Dark Theme Overrides
+   ============================================ */
+[data-theme="dark"] {
+    /* Neutral — Dark palette */
+    --gray-50: #1a1f2e;
+    --gray-100: #1e2538;
+    --gray-200: #2a3246;
+    --gray-300: #3b4560;
+    --gray-400: #64748b;
+    --gray-500: #8b98b0;
+    --gray-600: #a8b5cc;
+    --gray-700: #c5cee0;
+    --gray-800: #e0e6f0;
+    --gray-900: #f0f2f7;
+    --gray-950: #f8fafc;
+
+    /* Semantic subtle backgrounds (dark) */
+    --success-50: rgba(34, 197, 94, 0.1);
+    --success-100: rgba(34, 197, 94, 0.15);
+    --warning-50: rgba(245, 158, 11, 0.1);
+    --warning-100: rgba(245, 158, 11, 0.15);
+    --danger-50: rgba(239, 68, 68, 0.1);
+    --danger-100: rgba(239, 68, 68, 0.15);
+    --info-50: rgba(59, 130, 246, 0.1);
+    --info-100: rgba(59, 130, 246, 0.15);
+    --primary-50: rgba(124, 58, 237, 0.1);
+    --primary-100: rgba(124, 58, 237, 0.15);
+    --accent-50: rgba(6, 182, 212, 0.1);
+
+    /* Layout */
+    --sidebar-bg: #0a0c14;
+    --sidebar-border: rgba(255, 255, 255, 0.04);
+
+    --topbar-bg: rgba(16, 20, 30, 0.85);
+    --topbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --topbar-border: rgba(255, 255, 255, 0.06);
+    --topbar-text: #f0f2f7;
+
+    --body-bg: #0e1117;
+    --card-bg: #151923;
+    --card-hover: #1a2030;
+    --card-border: rgba(255, 255, 255, 0.06);
+
+    /* Shadows - deeper for dark backgrounds */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.35), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
+    --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.25);
 }

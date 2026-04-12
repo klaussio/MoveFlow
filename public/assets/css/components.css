@@ -6,9 +6,9 @@
 .card {
     background: var(--card-bg);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--card-border, var(--gray-200));
     box-shadow: var(--shadow-card);
-    transition: box-shadow var(--transition-base), transform var(--transition-base);
+    transition: box-shadow var(--transition-base), transform var(--transition-base), background var(--transition-base), border-color var(--transition-base);
 }
 .card:hover { box-shadow: var(--shadow-md); }
 .card-body { padding: var(--space-5); }
@@ -26,7 +26,7 @@
 }
 .stat-card {
     background: var(--card-bg); border-radius: var(--radius-lg); padding: var(--space-5);
-    border: 1px solid var(--gray-200); box-shadow: var(--shadow-card);
+    border: 1px solid var(--card-border, var(--gray-200)); box-shadow: var(--shadow-card);
     display: flex; align-items: flex-start; gap: var(--space-4);
     position: relative; overflow: hidden; transition: all var(--transition-base);
 }

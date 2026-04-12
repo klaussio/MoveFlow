@@ -27,6 +27,7 @@ body {
     color: var(--gray-800);
     background-color: var(--body-bg);
     overflow-x: hidden;
+    transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 /* === Typography === */
@@ -35,6 +36,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: var(--font-semibold);
     line-height: var(--leading-tight);
     color: var(--gray-900);
+    transition: color var(--transition-base);
 }
 
 h1 { font-size: var(--text-3xl); font-weight: var(--font-bold); }
@@ -47,6 +49,7 @@ h6 { font-size: var(--text-base); }
 p {
     margin-bottom: var(--space-4);
     color: var(--gray-600);
+    transition: color var(--transition-base);
 }
 
 a {

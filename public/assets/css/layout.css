@@ -251,13 +251,14 @@
     background: var(--topbar-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--topbar-border, var(--gray-200));
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 var(--space-6);
     z-index: var(--z-sticky);
     box-shadow: var(--topbar-shadow);
+    transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .topbar-left {
@@ -294,7 +295,8 @@
     font-family: var(--font-heading);
     font-size: var(--text-lg);
     font-weight: var(--font-semibold);
-    color: var(--gray-900);
+    color: var(--topbar-text, var(--gray-900));
+    transition: color var(--transition-base);
 }
 
 .topbar-breadcrumb {
