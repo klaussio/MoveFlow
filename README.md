@@ -11,11 +11,24 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
 </p>
 
+<p align="center">
+  <img src="screenshots/capa.jpg" alt="MoveFlow: dashboard com corridas, faturamento dos últimos 7 dias e distribuição por status" width="900">
+</p>
+
 ---
 
 ## 📋 Sobre
 
 O **MoveFlow** é um sistema web completo de gestão para corridas urbanas inspirado em plataformas de mobilidade como Uber, com foco administrativo e operacional. Desenvolvido com arquitetura MVC customizada em PHP, oferece uma interface moderna e profissional para gerenciamento completo de motoristas, passageiros e corridas.
+
+## 🖼️ Telas
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/capa.jpg" alt="Dashboard do MoveFlow"><br><sub>Dashboard: corridas, faturamento dos últimos 7 dias e distribuição por status</sub></td>
+    <td width="50%"><img src="screenshots/detalhe-corrida.jpg" alt="Detalhe de uma corrida"><br><sub>Detalhe da corrida: linha do tempo do status, rota, tarifa discriminada, passageiro e motorista</sub></td>
+  </tr>
+</table>
 
 ## ✨ Funcionalidades
 
