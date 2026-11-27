@@ -98,7 +98,7 @@ Tarifa = R$ 5,00 (base) + Distância × R$ 2,50/km + Duração × R$ 0,40/min
 1. **Clone o repositório** na pasta `htdocs` do XAMPP:
    ```bash
    cd C:\xampp\htdocs
-   git clone https://github.com/seu-usuario/MoveFlow.git
+   git clone https://github.com/klaussio/MoveFlow.git
    ```
 
 2. **Inicie o Apache e MySQL** no painel do XAMPP
